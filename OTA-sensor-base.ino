@@ -55,7 +55,7 @@ void setup() {
 
   Wire.begin(12,14);   //set up I2C with SDA,SCL
   // check what equipment we have
-  pressure_sensor_present = (pressure.begin());
+  //pressure_sensor_present = (pressure.begin());
 
   DS18B20.begin();
   if (DS18B20.getDeviceCount() > 0) {
