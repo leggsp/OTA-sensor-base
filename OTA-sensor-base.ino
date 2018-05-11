@@ -14,10 +14,12 @@
 #include <Wire.h>
 #include <SFE_BMP180.h>
 
-// network connection credentials
-const char* ssid = "BTHub3-W734";
-const char* password = "dfe4aadffb";
-const char* mqtt_server = "downstairspi.home";
+//my real wifi credentials are left out of the git repo, look for them first
+// you need to copy 'dummy-credentials.h' to 'credentials.h and edit with your local values
+#include "credentials.h"
+#ifndef CREDENTIALS  //check is they are defined
+#include "dummy-credentials.h"
+#endif
 
 WiFiClient espClient;  //declare the wifi client
 PubSubClient client(espClient);  //declare the mqtt client
@@ -55,7 +57,7 @@ void setup() {
 
   Wire.begin(12,14);   //set up I2C with SDA,SCL
   // check what equipment we have
-  pressure_sensor_present = (pressure.begin());
+  //pressure_sensor_present = (pressure.begin());
 
   DS18B20.begin();
   if (DS18B20.getDeviceCount() > 0) {
