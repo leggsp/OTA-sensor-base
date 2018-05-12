@@ -36,7 +36,7 @@ void setup() {
   client.setCallback(callback);
 
   Wire.begin(12,14);   //set up I2C with SDA,SCL
-  
+<
 }
 
  
