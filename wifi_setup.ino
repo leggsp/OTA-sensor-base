@@ -24,10 +24,10 @@ void setup_wifi() {
   // ArduinoOTA.setPort(8266);
 
   // Hostname defaults to esp8266-[ChipID]
-  ArduinoOTA.setHostname(SENSOR_LOCATION);
+  ArduinoOTA.setHostname(HOST_NAME);
 
   // No authentication by default
-  ArduinoOTA.setPassword((const char *)SENSOR_PASSWORD);
+  ArduinoOTA.setPassword((const char *)HOST_PASSWORD);
 
   ArduinoOTA.onStart([]() {
     Serial.println("Start");
